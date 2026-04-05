@@ -17,6 +17,8 @@ SHIPS = {
     "Battleship":4
 }
 
+SHIPS_S = dict(sorted(SHIPS.items(), key=lambda x: x[1], reverse=True))
+
 #-------------------------------------------
 #Board symbols
 WATER = "~"
@@ -53,3 +55,12 @@ COLUMNS = {
     "I": 9,
     "J": 10
 }
+#------------------------------------------------
+#Player name
+player = input("Introduce your NICK")
+
+
+success_message = "Ships placed"
+
+
+
