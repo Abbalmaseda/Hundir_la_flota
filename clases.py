@@ -6,7 +6,7 @@ import numpy as np
 class board:
 
         #Esta clase representa el tablero de juego de un jugador.
-        #Attributes:
+        #Atributos:
         #player_id (str): Identificador del jugador. Si no se le pasa nombre
         #                 por defecto será la CPU.
 
@@ -32,13 +32,15 @@ class board:
         for c in COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
             columns_values.append(c) # y los alimento en la lista creada para ello
         for x in ROWS.keys(): # Hago lo mismo para las filas
-            rows_values.append(x)
+            rows_values.append(str(x))
 
-        my_board = np.full([size, size], ' ', dtype=object) #Genero la matriz del tablero del usuario
+        my_board = np.full([size, size], WATER, dtype=object) #Genero la matriz del tablero del usuario
+        my_board[0, 0] = " "
         my_board[0, 1:] = columns_values # asigno los valores obtenidos anteriormente a la fila y columna 0
         my_board[1:, 0] = rows_values
 
-        tracking = np.full([size, size], ' ', dtype=object) # Lo mismo para el tablero de seguimiento
+        tracking = np.full([size, size], WATER, dtype=object) # Lo mismo para el tablero de seguimiento
+        tracking[0, 0] = " "
         tracking[0, 1:] = columns_values
         tracking[1:, 0] = rows_values
 
@@ -54,8 +56,9 @@ class board:
     def place_ships(self):
 
         # Coloca los barcos de manera aleatoria a partir del diccionario SHIPS definido en variable.py
-        # El for recorre el diccionario SHIPS para obtener el nombre del barco y su longitud
-        # Despues crea la instancia de la clase ship() con el valor de index y lo almacena en el atributo ships_fleet
+        # El for recorre el diccionario SHIPS para obtener el nombre del barco y su longitud.
+        # Despues crea la instancia de la clase ship() con el valor de index y lo almacena en el atributo ships_fleet.
+        # El bucle while True se ejecuta hasta que el objeto barco está ubicado correctamente de manera aleatoria.
             
         
         for key, value in SHIPS.items():
@@ -67,7 +70,8 @@ class board:
                 x_init = np.random.randint(1,self.board_size) # Genero la posición en las filas
                 y_init = np.random.randint(1,self.board_size) # Genero la posición en las columnas
                 
-                if self.ships_fleet[key].orientation == 1: # Chequeo validez según orientación y defino barco como lista de coordenadas
+
+                if self.ships_fleet[key].orientation == 1:
                     if x_init - (self.ships_fleet[key].length - 1) < 1:
                         continue
                     self.ships_fleet[key].coords = [(x_init - i, y_init) for i in range(self.ships_fleet[key].length)]
@@ -84,55 +88,98 @@ class board:
                         continue
                     self.ships_fleet[key].coords = [(x_init, y_init - i) for i in range(self.ships_fleet[key].length)]
                 
-
-                if any(self.my_board[i,j] == SHIP for i,j in self.ships_fleet[key].coords): # Compruebo que en esas coordenadas no hay un barco
+                # Comprueba que en esas coordenadas no hay un barco
+                if any(self.my_board[i,j] == SHIP for i,j in self.ships_fleet[key].coords): 
                     continue
-
-                for i, j in self.ships_fleet[key].coords: # Coloco el barco en el tablero del jugador
+                
+                # Coloca el barco en el tablero del jugador
+                for i, j in self.ships_fleet[key].coords: 
                     self.my_board[i, j] = SHIP
 
                 break
 
-        return True # Si se colocan todos los barcos, devuelve True
-        #return lo_que_sea ¡¡¡Cambiar por mensaje de variables.py!!!
+        return True # Si se colocan todos los barcos, devuelve True (debería ser una salida por pantalla)
         
 
 
 
 
-    #def receive_shot(self, x: int, y: int):
-        # Raise ValueError: Si las coordenadas están fuera del tablero.
+    def receive_shot(self, x: int, y: int):
+        
+        # Recive un valor int como coordenadas x e y, sería bueno una función que recoja el valor introducido por el usuario,
+        # lo mapee en el caso de las columnas, lo convierta a int y llame al método
+        # pasando esos int como argumentos.
+        
+        # MODO DE USO:
+        #   1. Llamar al método pasando los argumentos como int. Devuelve ValueError en caso de que no llegue como int.
+        #   2. Comprueba que las coordenadas están en la zona de disparo, sin valor 0 en fila o columna y no excede las dimensiones del tablero. Devuelve ValueError si eso ocurre.
+        #   3. Comprueba el valor de la posición impacatada. Si ha impactado, devuelve True, si es agua devuelve False.
 
-        # Procesa un disparo en la coordenada (x, y).
-        #   Args:
-        #   x (int): Fila del disparo (1-10).
-        #   y (int): Columna del disparo (A-J).
+        
+        if not isinstance(x, int) or not isinstance(y, int):
+            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
+        elif x > self.my_board.size or y > self.my_board.shape[1]:
+            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
+        elif x == 0 or y == 0:
+            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
+        
+        if self.my_board[x,y] == SHIP:
+            return True
+        else:
+            return False
+        
+        
+        
+        
+    def display(self,attr):
 
+        # Recibe un atributo como argumento, el argumento debe ser el nombre del tablero a mostrar (my_board o tracking).
+        # Lo que hace es recorrer la matriz con el primer for y convertir cada array en una lista usando como separador espacios
+        # para mostrar una impresión en pantalla ordenada y limpia.
+        # El primer for se usa para alinear números de 1 cifra y el segundo de 2 cifras.
 
-        #return bool # True si impacta en barco, False si es agua.
-        
-        
-        
-        
-    #def display():
+        # MODO DE USO:
+        #   Para mostrar el tablero del jugador: nombre_del_objeto_tablero.display(nombre_del_objeto_tablero.my_board)
+        #   Para mostrar el tablero de la CPU: nombre_del_objeto_tablero.display(nombre_del_objeto_tablero.tracking)
+
+        for i in attr[:9]:
+                print("  ".join([str(x) for x in i]))
+        for i in attr[10:]:
+            print(" ".join([str(x) for x in i[0:1]]), end=" ")
+            print("  ".join([str(x) for x in i[1:]]))
 
 
 class ship():
 
-    # Defino la clase barco. El barco sabe su longitud, dónde está, y si está hundido.
+    # Define la clase barco. Cada barco será una instancia de este objeto.
+    # 
+    # Atributos:
+    #   ship_name (str): Nombre del barco obtenido del diccionario SHIPS. No es crítico, lo dejamos
+    #                    por si en el flujo se quiere preguntar al barco cómo se llama.
+    #
+    #   length (int): Es la longitud actual del barco, comienza siendo la longitud total y se le restan los impactos.
+    #
+    #   sunk (bool): Sirve para saber si el barco flota o se ha hundido. Cominza siendo False porque el barco flota por defecto.
+    #
+    #   coords (list): Son las coordenadas de hubicación del barco.
+    
 
     def __init__(self, ship_name, length, sunk = False, coords = []):
-        self.ship_name = ship_name # Posiblemente no haga falta
+        self.ship_name = ship_name
         self.length = length
         self.sunk = sunk
         self.coords = coords
 
-    # El método is_sunk() devuelve False si el barco flota, y True si ya ha sido impactado en todas sus posiciones.
-    # Para que funcione, con cada disparo hay que:
-    #   1. Comprobar el valor de la posición que recibe el disparo.
-    #   2. Si ha sido impacto, buscar en el atributo ships_fleet qué indice (que instancia de la clase ship()) tiene esa posición.
-    #   3. Invocar el método para saber si está hundido: nombre_tablero.ships_fleet["indice"].is_sunk()
     def is_sunk(self):
+
+        # El método is_sunk() devuelve False si el barco flota, y True si ya ha sido impactado en todas sus posiciones.
+        # MODO DE USO:
+        # con cada disparo hay que:
+        #   1. Comprobar el valor de la posición que recibe el disparo.
+        #   2. Si ha sido impacto, buscar en el atributo ships_fleet qué indice (que instancia de la clase ship()) tiene esa posición.
+        #   3. Restar una posición al atributo lenght del barco.
+        #   3. Invocar el método para saber si está hundido: nombre_tablero.ships_fleet["indice"].is_sunk()
+
         if self.length == 0:
             self.sunk = True
         return self.sunk
