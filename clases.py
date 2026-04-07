@@ -26,20 +26,20 @@ class board:
         #                    que hay en este tablero.
 
 
-    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = BOARD_SIZE+1,ships_fleet = {}):
+    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {}):
         columns_values = []
         rows_values = []
-        for c in COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
+        for c in variable.COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
             columns_values.append(c) # y los alimento en la lista creada para ello
-        for x in ROWS.keys(): # Hago lo mismo para las filas
+        for x in variable.ROWS.keys(): # Hago lo mismo para las filas
             rows_values.append(str(x))
 
-        my_board = np.full([size, size], WATER, dtype=object) #Genero la matriz del tablero del usuario
+        my_board = np.full([size, size], variable.WATER, dtype=object) #Genero la matriz del tablero del usuario
         my_board[0, 0] = " "
         my_board[0, 1:] = columns_values # asigno los valores obtenidos anteriormente a la fila y columna 0
         my_board[1:, 0] = rows_values
 
-        tracking = np.full([size, size], WATER, dtype=object) # Lo mismo para el tablero de seguimiento
+        tracking = np.full([size, size], variable.WATER, dtype=object) # Lo mismo para el tablero de seguimiento
         tracking[0, 0] = " "
         tracking[0, 1:] = columns_values
         tracking[1:, 0] = rows_values
@@ -61,7 +61,7 @@ class board:
         # El bucle while True se ejecuta hasta que el objeto barco está ubicado correctamente de manera aleatoria.
             
         
-        for key, value in SHIPS.items():
+        for key, value in variable.SHIPS.items():
             self.ships_fleet[key] = ship(key,value)
             while True:
                 self.ships_fleet[key].ship_name = key
@@ -89,12 +89,12 @@ class board:
                     self.ships_fleet[key].coords = [(x_init, y_init - i) for i in range(self.ships_fleet[key].length)]
                 
                 # Comprueba que en esas coordenadas no hay un barco
-                if any(self.my_board[i,j] == SHIP for i,j in self.ships_fleet[key].coords): 
+                if any(self.my_board[i,j] == variable.SHIP for i,j in self.ships_fleet[key].coords): 
                     continue
                 
                 # Coloca el barco en el tablero del jugador
                 for i, j in self.ships_fleet[key].coords: 
-                    self.my_board[i, j] = SHIP
+                    self.my_board[i, j] = variable.SHIP
 
                 break
 
@@ -123,7 +123,7 @@ class board:
         elif x == 0 or y == 0:
             raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
         
-        if self.my_board[x,y] == SHIP:
+        if self.my_board[x,y] == variable.SHIP:
             return True
         else:
             return False
@@ -142,7 +142,7 @@ class board:
         #   Para mostrar el tablero del jugador: nombre_del_objeto_tablero.display(nombre_del_objeto_tablero.my_board)
         #   Para mostrar el tablero de la CPU: nombre_del_objeto_tablero.display(nombre_del_objeto_tablero.tracking)
 
-        for i in attr[:9]:
+        for i in attr[:10]:
                 print("  ".join([str(x) for x in i]))
         for i in attr[10:]:
             print(" ".join([str(x) for x in i[0:1]]), end=" ")
