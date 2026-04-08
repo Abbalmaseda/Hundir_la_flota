@@ -1,9 +1,9 @@
 #-------------------------------------------
-#Board size
+#Tamaño del tablero
 BOARD_SIZE = 10
 
 #-------------------------------------------
-#SHIPS and their lengths 
+#Barcos y sus medidas
 SHIPS = {
     "Pertol_Boat_1": 1,
     "Petrol_Boat_2":1,
@@ -20,14 +20,14 @@ SHIPS = {
 SHIPS_S = dict(sorted(SHIPS.items(), key=lambda x: x[1], reverse=True))
 
 #-------------------------------------------
-#Board symbols
+#Simbolos tablero
 WATER = "~"
 SHIP = "S"
 HIT = "X"
 MISS = "O"
 
 #-------------------------------------------
-#MESSAGES 
+#Mensajes 
 WELCOME_MSG = "Welcome to battleship!"
 INSTRUCTION_ROW = "Enter the row number to fire (1-10):"
 INSTRUCTION_COLUMN = "Enter the column letter to fire (A-J):"
@@ -38,11 +38,11 @@ VICTORY_MSG = "Congratulations, you won!"
 LOSE_MSG = " You lost!"
 
 #-------------------------------------------
-# Rows numbered from 1 to 101
+# Filas enumeradas desde el 1 hasta el 101
 ROWS = {i: i for i in range(1, BOARD_SIZE+1)}
 
 #-------------------------------------------
-# Columns from A to J
+# Columnas desde la A a la J
 COLUMNS = {
     "A": 1,
     "B": 2,
@@ -56,7 +56,7 @@ COLUMNS = {
     "J": 10
 }
 #------------------------------------------------
-#Player name
+#Nombre del jugador
 player = input("Introduce your NICK")
 
 
