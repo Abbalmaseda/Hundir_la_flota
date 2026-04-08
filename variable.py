@@ -5,7 +5,7 @@ BOARD_SIZE = 10
 #-------------------------------------------
 #SHIPS and their lengths 
 SHIPS = {
-    "Petrol_Boat_1": 1,
+    "Pertol_Boat_1": 1,
     "Petrol_Boat_2":1,
     "Petrol_Boat_3":1,
     "Petrol_Boat_4":1,
@@ -57,7 +57,7 @@ COLUMNS = {
 }
 #------------------------------------------------
 #Player name
-player_name = ""
+player = input("Introduce your NICK")
 
 
 success_message = "Ships placed"
