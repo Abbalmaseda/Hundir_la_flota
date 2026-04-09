@@ -25,8 +25,10 @@ class board:
         #ships_fleet (dict): Diccionario que almacena las instancias de la clase ship() 
         #                    que hay en este tablero.
 
+        #count (int): Almacena el número de barcos que hay flotando en el tablero en cada momento.
 
-    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {}):
+
+    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {},count = 0):
         columns_values = []
         rows_values = []
         for c in variable.COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
@@ -49,6 +51,7 @@ class board:
         self.my_board = my_board
         self.tracking = tracking
         self.ships_fleet = ships_fleet
+        self.count = count
 
 
 
@@ -95,10 +98,11 @@ class board:
                 # Coloca el barco en el tablero del jugador
                 for i, j in self.ships_fleet[key].coords: 
                     self.my_board[i, j] = variable.SHIP
+                    self.count -= 1
 
                 break
 
-        return True # Si se colocan todos los barcos, devuelve True (debería ser una salida por pantalla)
+        return variable.success_message # Si se colocan todos los barcos, devuelve feedback.
         
 
 
