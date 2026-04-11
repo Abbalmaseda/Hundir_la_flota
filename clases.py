@@ -26,7 +26,7 @@ class board:
         #                    que hay en este tablero.
 
 
-    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {}):
+    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1):
         columns_values = []
         rows_values = []
         for c in variable.COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
@@ -48,7 +48,10 @@ class board:
         self.board_size = size
         self.my_board = my_board
         self.tracking = tracking
-        self.ships_fleet = ships_fleet
+        self.ships_fleet = {}
+        # -CAMBIO SUGERIDO------
+        # PROBLEMA: Solo se crea un tablero.
+        # SOLUCIÓN: linea 29 y 51. No compartir diccionario con CPU.
 
 
 
@@ -123,9 +126,19 @@ class board:
         elif x == 0 or y == 0:
             raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
         
+        # -CAMBIO SUGERIDO M------------------
+        # PROBLEMA: No se refleja en el tablero los disparos, tampoco se resta vida a los barcos
+        # SOLUCION: 
         if self.my_board[x,y] == variable.SHIP:
+            self.my_board[x,y] = variable.HIT #Marca en el tablero "X"
+            # Buscamos el barco al que pertenece esa celda y restamos una vida
+            for ship_obj in self.ships_fleet.values():
+                if (x,y) in ship_obj.coords:
+                    ship_obj.lenght -= 1 
+                    break
             return True
         else:
+            self.my_board[x,y] = variable.MISS #Marca en el tablero "O"
             return False
         
         
