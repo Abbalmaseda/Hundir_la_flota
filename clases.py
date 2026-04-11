@@ -134,7 +134,7 @@ class board:
             # Buscamos el barco al que pertenece esa celda y restamos una vida
             for ship_obj in self.ships_fleet.values():
                 if (x,y) in ship_obj.coords:
-                    ship_obj.lenght -= 1 
+                    ship_obj.length -= 1 
                     break
             return True
         else:

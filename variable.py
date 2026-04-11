@@ -5,7 +5,7 @@ BOARD_SIZE = 10
 #-------------------------------------------
 #Barcos y sus medidas
 SHIPS = {
-    "Pertol_Boat_1": 1,
+    "Petrol_Boat_1": 1,
     "Petrol_Boat_2":1,
     "Petrol_Boat_3":1,
     "Petrol_Boat_4":1,

@@ -30,16 +30,19 @@ def player_shoot(enemy_board, tracking_board):
         row = int(input())
         print(variable.INSTRUCTION_COLUMN)
         column_letter = input()
+        col_number = letter_to_number(column_letter)
 
         #comprobamos que esté dentro del rango
         if col_number not in variable.COLUMNS:
             print("Column invalid. Use A-J")
             continue
         
-        col_number = letter_to_number(column_letter)
-        result = enemy_board.receive_shot(row,column_letter)
+        result = enemy_board.receive_shot(row,col_number)
 
         if result:
+            tracking_board[row,col_number] = variable.HIT
+            print(variable.HIT_MSG)
+        else:
             tracking_board[row,col_number] = variable.MISS
             print(variable.MISS_MSG)
         
@@ -75,7 +78,7 @@ def machine_shoot(player_board, tracking_cpu):
         for ship_obj in player_board.ships_fleet.values():
             if ship_obj.length == 0 and not ship_obj.sunk:
                 ship_obj.sunk = True
-                print(f"The machine has sunk your {ship_obj.variable.ship_name}")
+                print(f"The machine has sunk your {ship_obj.ship_name}")
 
     return result
 
