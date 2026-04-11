@@ -120,11 +120,11 @@ class board:
 
         
         if not isinstance(x, int) or not isinstance(y, int):
-            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
+            raise ValueError("The coordinates received are invalid.") #Esto debería ser un mensaje de error en variable.py
         elif x > self.my_board.size or y > self.my_board.shape[1]:
-            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
+            raise ValueError("The coordinates received are invalid.") #Esto debería ser un mensaje de error en variable.py
         elif x == 0 or y == 0:
-            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
+            raise ValueError("The coordinates received are invalid.") #Esto debería ser un mensaje de error en variable.py
         
         # -CAMBIO SUGERIDO M------------------
         # PROBLEMA: No se refleja en el tablero los disparos, tampoco se resta vida a los barcos

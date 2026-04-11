@@ -4,26 +4,30 @@ import variable
 import random
 from clases import board
 
-def letra_a_numero(letra):
-    # Función 1 (usa la variable COLUMNS): Convierte A en 1, B en 2, C en 3, etc.
-    letra = letra.upper()
-    return variable.COLUMNS[letra]
 
-def disparo_jugador(tablero_enemigo):
+# -CAMBIO SUGERIDO------
+# PROBLEMA: Resto de codigo en ingles
+# SOLUCION: Cambio al ingles
+def letter_to_number(letter):
+    # Función 1 (usa la variable COLUMNS): Convierte A en 1, B en 2, C en 3, etc.
+    letter = letter.upper()
+    return variable.COLUMNS[letter]
+
+def player_shoot(enemy_board):
     # Función 2 (para recieve_shot, usa la variable INSTRUCTIONS): Pide al jugador dónde disparar
     print(variable.INSTRUCTION_ROW)
-    fila = int(input())
+    row = int(input())
     
     print(variable.INSTRUCTION_COLUMN)
-    columna = input()
-    col_numero = letra_a_numero(columna)
+    column = input()
+    col_number = letter_to_number(column)
     
     # Llama al método del tablero enemigo
-    return tablero_enemigo.receive_shot(fila, col_numero)
+    return enemy_board.receive_shot(row, col_number)
 
-def disparo_maquina(tablero_jugador):
+def machine_shoot(player_board):
     # Función 3 (para recieve_shot): Máquina dispara al azar
-    fila = random.randint(1, 10)
+    row = random.randint(1, 10)
     col = random.randint(1, 10)
-    print(f"Máquina dispara a fila {fila}, columna {col}")
-    return tablero_jugador.receive_shot(fila, col)
+    print(f"The machine fires at row {row} and column {col}")
+    return player_board.receive_shot(row, col)
