@@ -29,14 +29,14 @@ def player_shoot(enemy_board, tracking_board):
         print(variable.INSTRUCTION_ROW)
         row = int(input())
         print(variable.INSTRUCTION_COLUMN)
-        column_letter = input()
-        col_number = letter_to_number(column_letter)
+        column_letter = input().strip().upper()
 
         #comprobamos que esté dentro del rango
-        if col_number not in variable.COLUMNS:
+        if column_letter not in variable.COLUMNS:
             print("Column invalid. Use A-J")
             continue
         
+        col_number = letter_to_number(column_letter)
         result = enemy_board.receive_shot(row,col_number)
 
         if result:
