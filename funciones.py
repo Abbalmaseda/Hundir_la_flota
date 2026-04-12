@@ -54,10 +54,26 @@ def disparo_jugador(tablero_enemigo, tracking_board):
 
         break
 
-def disparo_maquina(tablero_jugador):
-    # Función 3 (para recieve_shot): Máquina dispara al azar
-    fila = random.randint(1, 10)
-    col = random.randint(1, 10)
-    print(f"Máquina dispara a fila {fila}, columna {col}")
-    return tablero_jugador.receive_shot(fila, col)
+def disparo_maquina(tablero_jugador, tracking_board):
+    while True:
+        fila = random.randint(1, 10)
+        col = random.randint(1, 10)
+
+        # Evitar repetir disparos
+        if tracking_board[fila, col] != variable.WATER:
+            continue
+
+        print(f"Máquina dispara a fila {fila}, columna {col}")
+
+        hit = tablero_jugador.receive_shot(fila, col)
+
+        if hit:
+            tracking_board[fila, col] = variable.HIT
+        else:
+            tracking_board[fila, col] = variable.MISS
+
+        break
+
+def all_ships_sunk(self):
+        return all(ship.is_sunk() for ship in self.ships_fleet.values())  #Comprobamos si estan todos los barcos hundidos
 

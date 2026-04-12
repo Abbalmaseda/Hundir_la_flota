@@ -109,11 +109,10 @@ class board:
             raise ValueError("Coordenadas no válidas.")
         if x == 0 or y == 0 or x >= self.board_size or y >= self.board_size:
             raise ValueError("Coordenadas fuera del tablero.")
-        if self.my_board[x, y] in (HIT, MISS):
-            raise ValueError("Ya has disparado aquí.")
 
-        if self.my_board[x, y] == SHIP:
-            self.my_board[x, y] = HIT
+
+        if self.my_board[x, y] == variable.SHIP:
+            self.my_board[x, y] = variable.HIT
         # Buscamos el barco al que pertenece esa celda y le restamos vida
             for ship_obj in self.ships_fleet.values():
                 if (x, y) in ship_obj.coords:
@@ -121,7 +120,7 @@ class board:
                     break
             return True
         else:
-            self.my_board[x, y] = MISS
+            self.my_board[x, y] = variable.MISS
             return False
         
         

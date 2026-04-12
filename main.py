@@ -1,6 +1,6 @@
 import variable
 from clases import board
-from funciones import disparo_jugador, disparo_maquina
+from funciones import disparo_jugador, disparo_maquina, all_ships_sunk
 
 def main():
     
