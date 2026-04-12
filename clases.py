@@ -26,7 +26,7 @@ class board:
         #                    que hay en este tablero.
 
 
-    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1):
+    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {}):
         columns_values = []
         rows_values = []
         for c in variable.COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
@@ -49,9 +49,6 @@ class board:
         self.my_board = my_board
         self.tracking = tracking
         self.ships_fleet = {}
-        # -CAMBIO SUGERIDO------
-        # PROBLEMA: Solo se crea un tablero.
-        # SOLUCIÓN: linea 29 y 51. No compartir diccionario con CPU.
 
 
 
@@ -108,37 +105,23 @@ class board:
 
 
     def receive_shot(self, x: int, y: int):
-        
-        # Recive un valor int como coordenadas x e y, sería bueno una función que recoja el valor introducido por el usuario,
-        # lo mapee en el caso de las columnas, lo convierta a int y llame al método
-        # pasando esos int como argumentos.
-        
-        # MODO DE USO:
-        #   1. Llamar al método pasando los argumentos como int. Devuelve ValueError en caso de que no llegue como int.
-        #   2. Comprueba que las coordenadas están en la zona de disparo, sin valor 0 en fila o columna y no excede las dimensiones del tablero. Devuelve ValueError si eso ocurre.
-        #   3. Comprueba el valor de la posición impacatada. Si ha impactado, devuelve True, si es agua devuelve False.
-
-        
         if not isinstance(x, int) or not isinstance(y, int):
-            raise ValueError("The coordinates received are invalid.") #Esto debería ser un mensaje de error en variable.py
-        elif x > self.my_board.size or y > self.my_board.shape[1]:
-            raise ValueError("The coordinates received are invalid.") #Esto debería ser un mensaje de error en variable.py
-        elif x == 0 or y == 0:
-            raise ValueError("The coordinates received are invalid.") #Esto debería ser un mensaje de error en variable.py
-        
-        # -CAMBIO SUGERIDO M------------------
-        # PROBLEMA: No se refleja en el tablero los disparos, tampoco se resta vida a los barcos
-        # SOLUCION: 
-        if self.my_board[x,y] == variable.SHIP:
-            self.my_board[x,y] = variable.HIT #Marca en el tablero "X"
-            # Buscamos el barco al que pertenece esa celda y restamos una vida
+            raise ValueError("Coordenadas no válidas.")
+        if x == 0 or y == 0 or x >= self.board_size or y >= self.board_size:
+            raise ValueError("Coordenadas fuera del tablero.")
+        if self.my_board[x, y] in (HIT, MISS):
+            raise ValueError("Ya has disparado aquí.")
+
+        if self.my_board[x, y] == SHIP:
+            self.my_board[x, y] = HIT
+        # Buscamos el barco al que pertenece esa celda y le restamos vida
             for ship_obj in self.ships_fleet.values():
-                if (x,y) in ship_obj.coords:
-                    ship_obj.length -= 1 
+                if (x, y) in ship_obj.coords:
+                    ship_obj.length -= 1
                     break
             return True
         else:
-            self.my_board[x,y] = variable.MISS #Marca en el tablero "O"
+            self.my_board[x, y] = MISS
             return False
         
         

@@ -5,7 +5,7 @@ BOARD_SIZE = 10
 #-------------------------------------------
 #Barcos y sus medidas
 SHIPS = {
-    "Petrol_Boat_1": 1,
+    "Pertol_Boat_1": 1,
     "Petrol_Boat_2":1,
     "Petrol_Boat_3":1,
     "Petrol_Boat_4":1,
@@ -57,7 +57,7 @@ COLUMNS = {
 }
 #------------------------------------------------
 #Nombre del jugador
-PLAYER_NAME_MSG = "Enter your name: "
+PLAYER_NAME_MSG = input("Enter your name: ")
 
 
 success_message = "Ships placed"
