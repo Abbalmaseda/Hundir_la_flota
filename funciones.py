@@ -77,3 +77,4 @@ def disparo_maquina(tablero_jugador, tracking_board):
 def all_ships_sunk(self):
         return all(ship.is_sunk() for ship in self.ships_fleet.values())  #Comprobamos si estan todos los barcos hundidos
 
+#############
