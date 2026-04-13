@@ -178,3 +178,6 @@ class ship():
         if self.length == 0:
             self.sunk = True
         return self.sunk
+    
+
+    ######################################################## fin del código ########################################
