@@ -4,6 +4,7 @@ import variable
 import random
 from clases import board
 
+
 def letra_a_numero(letra):
     # Función 1 (usa la variable COLUMNS): Convierte A en 1, B en 2, C en 3, etc.
     letra = letra.upper()
