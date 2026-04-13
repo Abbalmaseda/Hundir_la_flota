@@ -25,10 +25,8 @@ class board:
         #ships_fleet (dict): Diccionario que almacena las instancias de la clase ship() 
         #                    que hay en este tablero.
 
-        #count (int): Almacena el número de barcos que hay flotando en el tablero en cada momento.
 
-
-    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {},count = 0):
+    def __init__(self, my_board = "", tracking = "", player_id = "CPU", size = variable.BOARD_SIZE+1,ships_fleet = {}):
         columns_values = []
         rows_values = []
         for c in variable.COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
@@ -50,8 +48,7 @@ class board:
         self.board_size = size
         self.my_board = my_board
         self.tracking = tracking
-        self.ships_fleet = ships_fleet
-        self.count = count
+        self.ships_fleet = {}
 
 
 
@@ -98,38 +95,32 @@ class board:
                 # Coloca el barco en el tablero del jugador
                 for i, j in self.ships_fleet[key].coords: 
                     self.my_board[i, j] = variable.SHIP
-                    self.count -= 1
 
                 break
 
-        return variable.success_message # Si se colocan todos los barcos, devuelve feedback.
+        return True # Si se colocan todos los barcos, devuelve True (debería ser una salida por pantalla)
         
 
 
 
 
     def receive_shot(self, x: int, y: int):
-        
-        # Recive un valor int como coordenadas x e y, sería bueno una función que recoja el valor introducido por el usuario,
-        # lo mapee en el caso de las columnas, lo convierta a int y llame al método
-        # pasando esos int como argumentos.
-        
-        # MODO DE USO:
-        #   1. Llamar al método pasando los argumentos como int. Devuelve ValueError en caso de que no llegue como int.
-        #   2. Comprueba que las coordenadas están en la zona de disparo, sin valor 0 en fila o columna y no excede las dimensiones del tablero. Devuelve ValueError si eso ocurre.
-        #   3. Comprueba el valor de la posición impacatada. Si ha impactado, devuelve True, si es agua devuelve False.
-
-        
         if not isinstance(x, int) or not isinstance(y, int):
-            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
-        elif x > self.my_board.size or y > self.my_board.shape[1]:
-            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
-        elif x == 0 or y == 0:
-            raise ValueError("Las coordenadas recibidas no son válidas.") #Esto debería ser un mensaje de error en variable.py
-        
-        if self.my_board[x,y] == variable.SHIP:
+            raise ValueError("Coordenadas no válidas.")
+        if x == 0 or y == 0 or x >= self.board_size or y >= self.board_size:
+            raise ValueError("Coordenadas fuera del tablero.")
+
+
+        if self.my_board[x, y] == variable.SHIP:
+            self.my_board[x, y] = variable.HIT
+        # Buscamos el barco al que pertenece esa celda y le restamos vida
+            for ship_obj in self.ships_fleet.values():
+                if (x, y) in ship_obj.coords:
+                    ship_obj.length -= 1
+                    break
             return True
         else:
+            self.my_board[x, y] = variable.MISS
             return False
         
         
@@ -187,3 +178,6 @@ class ship():
         if self.length == 0:
             self.sunk = True
         return self.sunk
+    
+
+    ######################################################## fin del código #########################################
