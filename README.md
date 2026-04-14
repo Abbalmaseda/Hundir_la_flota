@@ -1,4 +1,4 @@
-[image-2.png]
+
 
 
 #### 🚢 Hundir la Flota | Battleship Game
@@ -85,6 +85,15 @@ Ejecuta el juego:
 python main.py
 
 
+**📅 Fecha:** Abril/ 2026  
+**📍 Ubicación:** España 
+
+
+
+<p align="center">
+  <img src="image-2.png" width="300" alt="Battleship Team Challenge Logo">
+</p>
+
 
  -----------------------------------------
 
@@ -167,10 +176,10 @@ python main.py
 
 
 
+**📅 Date:** April/ 2026  
+**📍 Location:** Spain
 
 
-
-
-
-**📅 Fecha:** 14 /04/ 2026  
-**📍 Ubicación:** España / Spain 
+<p align="center">
+  <img src="image-2.png" width="300" alt="Battleship Team Challenge Logo">
+</p>
