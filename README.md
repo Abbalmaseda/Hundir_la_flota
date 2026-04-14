@@ -11,6 +11,7 @@
 
 <a name="español"></a>
 
+
 ### 🇪🇸 Descripción en Español
 
 
@@ -20,17 +21,18 @@ Este proyecto implementa una versión digital del clásico juego **Hundir la Flo
 
 El objetivo es simular un entorno de juego completo por turnos, aplicando principios de programación estructurada, diseño modular y metodología Agile.
 
----
+
 
 ## 🎮 Descripción del Sistema
 El sistema reproduce una partida entre un usuario y una IA con comportamiento aleatoria. El flujo gestiona impactos, fallos y condiciones de victoria actualizando matrices en tiempo real.
+
+
 
 ## 🌍 Internacionalización (i18n)
 El juego permite seleccionar el idioma al inicio:
 * ES **Español**
 * 🇺🇸 **English**
 
----
 
 ## 🧠 Lógica y Stack Tecnológico
 El proyecto se apoya en herramientas fundamentales del ecosistema de Data Science:
@@ -40,7 +42,7 @@ El proyecto se apoya en herramientas fundamentales del ecosistema de Data Scienc
     * `Random`: Lógica de posicionamiento y disparos aleatorios.
 * **Metodología:** Agile / Scrum con control de versiones en Git & GitHub.
 
----
+
 
 ## 📐 Arquitectura del Proyecto
 El código sigue una estructura modular para facilitar el mantenimiento y la escalabilidad:
@@ -52,7 +54,6 @@ El código sigue una estructura modular para facilitar el mantenimiento y la esc
 | `funciones.py` | Lógica de negocio (disparos, colocación y validaciones). |
 | `variables.py` | Configuración global, diccionarios y coordenadas. |
 
----
 
 ## 👥 Equipo de Desarrollo
 El éxito de este proyecto se basa en la colaboración distribuida y roles definidos:
@@ -69,7 +70,6 @@ El éxito de este proyecto se basa en la colaboración distribuida y roles defin
 * **Maksym Chaika** — *Soporte Tecnico*
     * Optimización de código y resolución de incidencias.
 
----
 
 ## 🚀 Instalación y ejecución
 Clona el repositorio:
@@ -83,6 +83,7 @@ pip install -r requirements.txt
 
 Ejecuta el juego:
 python main.py
+
 
 
 **📅 Fecha:** Abril/ 2026  
@@ -99,9 +100,15 @@ python main.py
 
 
 
+
 <a name="english"></a>
 
 ### 🇺🇸 English Version
+
+
+# 🚢 Battleship Game
+
+
 
 ## 🚢 Team Challenge: Battleship (Hundir la Flota)
 
@@ -109,10 +116,12 @@ This project implements a digital version of the classic game Battleship, develo
 
 The goal is to simulate a full turn-based game environment, applying structured programming principles, modular design, and Agile methodology.
 
+
 ## 🎮 System Description
 
 The system simulates a match between a user and an AI with random behavior.
 The flow handles hits, misses, and win conditions while updating boards in real time.
+
 
 ## 🌍 Internationalization (i18n)
 
@@ -120,6 +129,7 @@ The game allows language selection at the start:
 
 ES Spanish
 EN English
+
 
 ## 🧠 Logic and Tech Stack
 
@@ -131,6 +141,7 @@ NumPy: management of boards using 2D matrices
 Random: ship placement and random shooting logic
 Methodology: Agile / Scrum with Git & GitHub version control
 
+
 ## 📐 Project Architecture
 
 The code follows a modular structure to improve maintainability and scalability:
@@ -140,6 +151,7 @@ main.py	Game flow orchestration and main loop
 clases.py	Board abstraction using OOP (classes Board and Ships)
 funciones.py	Game logic (shooting, placement and validations)
 variables.py	Global configuration, dictionaries and coordinates
+
 
 ## 👥 Development Team
 
@@ -157,6 +169,7 @@ Game lifecycle and main flow.
 Maksym Chaika — Technical Support
 Code optimization and issue resolution.
 
+
 ## 🚀 Installation and execution
 
 Clone the repository:
@@ -171,8 +184,6 @@ pip install -r requirements.txt
 
 Run the game:
 python main.py
-
-
 
 
 
