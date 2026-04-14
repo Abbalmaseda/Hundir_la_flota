@@ -11,7 +11,7 @@ class board:
         #                 por defecto será la CPU.
 
         #size (int): Dimensión del tablero (size x size), le sumamos
-        #            uno porque en la fila y columna 0 vamos a incluir
+        #            uno porque en la row y columna 0 vamos a incluir
         #            los nombres de estas.
 
         #my_board (np.ndarray): Matriz con barcos e impactos.
@@ -31,12 +31,12 @@ class board:
         rows_values = []
         for c in variable.COLUMNS.keys(): # Recupero los valores por defecto para los títulos de las columnas
             columns_values.append(c) # y los alimento en la lista creada para ello
-        for x in variable.ROWS.keys(): # Hago lo mismo para las filas
+        for x in variable.ROWS.keys(): # Hago lo mismo para las rows
             rows_values.append(str(x))
 
         my_board = np.full([size, size], variable.WATER, dtype=object) #Genero la matriz del tablero del usuario
         my_board[0, 0] = " "
-        my_board[0, 1:] = columns_values # asigno los valores obtenidos anteriormente a la fila y columna 0
+        my_board[0, 1:] = columns_values # asigno los valores obtenidos anteriormente a la row y columna 0
         my_board[1:, 0] = rows_values
 
         tracking = np.full([size, size], variable.WATER, dtype=object) # Lo mismo para el tablero de seguimiento
@@ -67,7 +67,7 @@ class board:
                 self.ships_fleet[key].ship_name = key
                 self.ships_fleet[key].length = value
                 self.ships_fleet[key].orientation = np.random.randint(1,5) # 1 = north, 2 = east; 3 = south, 4 = west
-                x_init = np.random.randint(1,self.board_size) # Genero la posición en las filas
+                x_init = np.random.randint(1,self.board_size) # Genero la posición en las rows
                 y_init = np.random.randint(1,self.board_size) # Genero la posición en las columnas
                 
 
