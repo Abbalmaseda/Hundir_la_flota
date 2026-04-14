@@ -106,9 +106,9 @@ class board:
 
     def receive_shot(self, x: int, y: int):
         if not isinstance(x, int) or not isinstance(y, int):
-            raise ValueError("Coordenadas no válidas.")
+            raise ValueError(variable.language["XY_ERROR"])
         if x == 0 or y == 0 or x >= self.board_size or y >= self.board_size:
-            raise ValueError("Coordenadas fuera del tablero.")
+            raise ValueError(variable.language["XY_LENGTH_ERROR"])
 
 
         if self.my_board[x, y] == variable.SHIP:

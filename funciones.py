@@ -30,42 +30,51 @@ def player_shoot(enemy_board, tracking_board):
 
     while True:
 
-        
-        print(variable.INSTRUCTION_ROW)
-        row_input = input()
 
-        if not row_input.isdigit():
-            print("Debes introducir un número.")
-            continue
-
-        row = int(row_input)
-
-        if row < 1 or row > 10:
-            print("row fuera de rango.")
-            continue
-
-        
-        print(variable.INSTRUCTION_COLUMN)
+        print(variable.language["INSTRUCTION_COLUMNS"])
         column = input().upper()
 
         if column not in variable.COLUMNS:
-            print("Columna inválida.")
+            print(variable.language["COLUMN_ERROR"])
             continue
 
         col_num = variable.COLUMNS[column]
 
         
+        print(variable.language["INSTRUCTION_ROWS"])
+        row_input = input()
+
+        if not row_input.isdigit():
+            print(variable.language["ROW_ERROR"])
+            continue
+
+        row = int(row_input)
+
+        if row < 1 or row > 10:
+            print(variable.language["ROW_LENGTH_ERROR"])
+            continue
+
+
         if tracking_board[row, col_num] != variable.WATER:
-            print("Ya has disparado ahí.")
+            print(variable.language["REPEAT_SHOT"])
             continue
         
         hit = enemy_board.receive_shot(row, col_num)
         
         if hit:
-            print(variable.HIT_MSG)
+            print(variable.language["HIT_MSG"])
             tracking_board[row, col_num] = variable.HIT
+            coord_hit = (row, col_num)
+
+            for ship in enemy_board.ships_fleet.values():
+                if coord_hit in ship.coords:
+                    sunk = ship.is_sunk()
+                    if sunk:
+                        print(ship.ship_name)
+                        print(variable.language["SUNK_MSG"])
+                    break
         else:
-            print(variable.MISS_MSG)
+            print(variable.language["MISS_MSG"])
             tracking_board[row, col_num] = variable.MISS
 
         break
@@ -81,19 +90,32 @@ def machine_shoot(player_board, tracking_board):
     while True:
         row = random.randint(1, 10)
         col = random.randint(1, 10)
+        col_to_text = [key for key, values in variable.COLUMNS.items() if values == col]
 
         
         if tracking_board[row, col] != variable.WATER:
             continue
         
-        print(f"Máquina dispara a la fila {row} y la columna {col}")
+        print(f"{variable.language["CPU_SHOT"].format(col=col_to_text[0],row=row)}")
 
         hit = player_board.receive_shot(row, col)
 
         if hit:
             tracking_board[row, col] = variable.HIT
+            print(variable.language["HIT_MSG"])
+            coord_hit = (row, col)
+
+            for ship in player_board.ships_fleet.values():
+                if coord_hit in ship.coords:
+                    sunk = ship.is_sunk()
+                    if sunk:
+                        print(ship.ship_name)
+                        print(variable.language["SUNK_MSG"])
+                    break
+
         else:
             tracking_board[row, col] = variable.MISS
+            print(variable.language["MISS_MSG"])
 
         break
 
