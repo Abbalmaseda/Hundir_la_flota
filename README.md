@@ -1,7 +1,5 @@
 
-
-
-# 🚢 Hundir la Flota | Battleship Game
+# 🚢 Hundir la Flota 
 
 > **Selecciona tu idioma / Select your language:**
 > 
@@ -15,7 +13,7 @@
 ### 🇪🇸 Descripción en Español
 
 
-## 🚢 Team Challenge: Hundir la Flota (Battleship)
+## 🚢 Hundir la Flota 
 
 Este proyecto implementa una versión digital del clásico juego **Hundir la Flota**, desarrollado en Python como parte del **Bootcamp de Data Science de The Bridge**.
 
@@ -28,7 +26,7 @@ El sistema reproduce una partida entre un usuario y una IA con comportamiento al
 
 
 
-## 🌍 Internacionalización (i18n)
+## 🌍 Internacionalización 
 El juego permite seleccionar el idioma al inicio:
 * ES **Español**
 * 🇺🇸 **English**
@@ -86,6 +84,8 @@ python main.py
 
 
 
+
+
 **📅 Fecha:** Abril/ 2026  
 **📍 Ubicación:** España 
 
@@ -103,14 +103,14 @@ python main.py
 
 <a name="english"></a>
 
-### 🇺🇸 English Version
 
 
 # 🚢 Battleship Game
 
+### 🇺🇸 English Version
 
 
-## 🚢 Team Challenge: Battleship (Hundir la Flota)
+## 🚢 Battleship:
 
 This project implements a digital version of the classic game Battleship, developed in Python as part of the Data Science Bootcamp at The Bridge.
 
@@ -123,7 +123,7 @@ The system simulates a match between a user and an AI with random behavior.
 The flow handles hits, misses, and win conditions while updating boards in real time.
 
 
-## 🌍 Internationalization (i18n)
+## 🌍 Internationalization 
 
 The game allows language selection at the start:
 
