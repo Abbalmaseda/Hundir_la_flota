@@ -1,3 +1,8 @@
+![image-2.png]
+
+
+
+
 # 🚢 Team Challenge: Hundir la Flota (Battleship)
 
 Este proyecto implementa una versión digital del clásico juego **Hundir la Flota**, desarrollado en Python como parte del **Bootcamp de Data Science de The Bridge**.
@@ -32,7 +37,7 @@ El código sigue una estructura modular para facilitar el mantenimiento y la esc
 | Archivo | Responsabilidad |
 | :--- | :--- |
 | `main.py` | Orquestación del flujo y bucle principal del juego. |
-| `clases.py` | Abstracción del tablero mediante POO (Clase `Board`). |
+| `clases.py` | Abstracción del tablero mediante POO (Clases `Board` y `Ships`). |
 | `funciones.py` | Lógica de negocio (disparos, colocación y validaciones). |
 | `variables.py` | Configuración global, diccionarios y coordenadas. |
 
