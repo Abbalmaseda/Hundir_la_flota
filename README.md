@@ -1,6 +1,17 @@
 ![image-2.png]
 
 
+# 🚢 Hundir la Flota | Battleship Game
+
+> **Selecciona tu idioma / Select your language:**
+> 
+> [🇪🇸 Leer en Español](#español) | [🇺🇸 Read in English](#english)
+
+---
+
+<a name="español"></a>
+
+## 🇪🇸 Descripción en Español
 
 
 # 🚢 Team Challenge: Hundir la Flota (Battleship)
@@ -60,7 +71,92 @@ El éxito de este proyecto se basa en la colaboración distribuida y roles defin
 
 ---
 
-## 🚀 Cómo ejecutarlo
-1. Clona el repositorio:
-   ```bash
-   git clone [https://github.com/tu-usuario/Hundir_la_flota.git](https://github.com/tu-usuario/Hundir_la_flota.git)
+🚀 Instalación y ejecución
+Clona el repositorio:
+git clone https://github.com/tu-usuario/Hundir_la_flota.git
+
+Entra en el directorio:
+cd Hundir_la_flota
+
+Instala dependencias (si aplica):
+pip install -r requirements.txt
+
+Ejecuta el juego:
+python main.py
+
+
+
+ -----------------------------------------
+
+
+
+<a name="english"></a>
+## 🇺🇸 English Version
+
+🚢 Team Challenge: Battleship (Hundir la Flota)
+
+This project implements a digital version of the classic game Battleship, developed in Python as part of the Data Science Bootcamp at The Bridge.
+
+The goal is to simulate a full turn-based game environment, applying structured programming principles, modular design, and Agile methodology.
+
+🎮 System Description
+
+The system simulates a match between a user and an AI with random behavior.
+The flow handles hits, misses, and win conditions while updating boards in real time.
+
+🌍 Internationalization (i18n)
+
+The game allows language selection at the start:
+
+ES Spanish
+EN English
+
+🧠 Logic and Tech Stack
+
+The project is based on key tools from the Data Science ecosystem:
+
+Language: Python 3.x
+Libraries:
+NumPy: management of boards using 2D matrices
+Random: ship placement and random shooting logic
+Methodology: Agile / Scrum with Git & GitHub version control
+
+📐 Project Architecture
+
+The code follows a modular structure to improve maintainability and scalability:
+
+File	Responsibility
+main.py	Game flow orchestration and main loop
+clases.py	Board abstraction using OOP (classes Board and Ships)
+funciones.py	Game logic (shooting, placement and validations)
+variables.py	Global configuration, dictionaries and coordinates
+
+👥 Development Team
+
+This project is based on distributed collaboration with clearly defined roles:
+
+Ana Belén Balmaseda — Scrum Master
+(variables.py)
+Team coordination, backlog management and global configuration.
+Dani García — Dev 1 (clases.py)
+Object layer design and board state management.
+Inés Goetsch — Dev 2 (funciones.py)
+Game mechanics and logic validation.
+Pablo Hernández — Dev 3 (main.py)
+Game lifecycle and main flow.
+Maksym Chaika — Technical Support
+Code optimization and issue resolution.
+🚀 Installation and execution
+
+Clone the repository:
+
+git clone https://github.com/tu-usuario/Hundir_la_flota.git
+
+Go to the project directory:
+cd Hundir_la_flota
+
+Install dependencies (if needed):
+pip install -r requirements.txt
+
+Run the game:
+python main.py
