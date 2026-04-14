@@ -1,7 +1,7 @@
-![image-2.png]
+[image-2.png]
 
 
-# 🚢 Hundir la Flota | Battleship Game
+#### 🚢 Hundir la Flota | Battleship Game
 
 > **Selecciona tu idioma / Select your language:**
 > 
@@ -14,7 +14,7 @@
 ## 🇪🇸 Descripción en Español
 
 
-# 🚢 Team Challenge: Hundir la Flota (Battleship)
+### 🚢 Team Challenge: Hundir la Flota (Battleship)
 
 Este proyecto implementa una versión digital del clásico juego **Hundir la Flota**, desarrollado en Python como parte del **Bootcamp de Data Science de The Bridge**.
 
@@ -22,17 +22,17 @@ El objetivo es simular un entorno de juego completo por turnos, aplicando princi
 
 ---
 
-## 🎮 Descripción del Sistema
+### 🎮 Descripción del Sistema
 El sistema reproduce una partida entre un usuario y una IA con comportamiento aleatoria. El flujo gestiona impactos, fallos y condiciones de victoria actualizando matrices en tiempo real.
 
 ### 🌍 Internacionalización (i18n)
 El juego permite seleccionar el idioma al inicio:
 * ES **Español**
-* EN **English**
+* 🇺🇸 **English**
 
 ---
 
-## 🧠 Lógica y Stack Tecnológico
+### 🧠 Lógica y Stack Tecnológico
 El proyecto se apoya en herramientas fundamentales del ecosistema de Data Science:
 
 * **Lenguaje:** Python 3.x
@@ -42,7 +42,7 @@ El proyecto se apoya en herramientas fundamentales del ecosistema de Data Scienc
 
 ---
 
-## 📐 Arquitectura del Proyecto
+### 📐 Arquitectura del Proyecto
 El código sigue una estructura modular para facilitar el mantenimiento y la escalabilidad:
 
 | Archivo | Responsabilidad |
@@ -54,12 +54,12 @@ El código sigue una estructura modular para facilitar el mantenimiento y la esc
 
 ---
 
-## 👥 Equipo de Desarrollo
+### 👥 Equipo de Desarrollo
 El éxito de este proyecto se basa en la colaboración distribuida y roles definidos:
 
 * **Ana Belén Balmaseda** — *Scrum Master * 
 (`variables.py`)
-    * Coordinación de equipo, gestión de backlog y configuración global.
+    * Coordinación de equipo, gestión de backlog y definicion de los parámetros, símbolos y textos para garantizar un código organizado, escalable y bilingüe
 * **Dani García** — *Dev 1* (`clases.py`)
     * Diseño de la capa de objetos y estado del tablero.
 * **Inés Goetsch** — *Dev 2* (`funciones.py`)
@@ -71,7 +71,7 @@ El éxito de este proyecto se basa en la colaboración distribuida y roles defin
 
 ---
 
-🚀 Instalación y ejecución
+### 🚀 Instalación y ejecución
 Clona el repositorio:
 git clone https://github.com/tu-usuario/Hundir_la_flota.git
 
@@ -91,27 +91,28 @@ python main.py
 
 
 <a name="english"></a>
+
 ## 🇺🇸 English Version
 
-🚢 Team Challenge: Battleship (Hundir la Flota)
+### 🚢 Team Challenge: Battleship (Hundir la Flota)
 
 This project implements a digital version of the classic game Battleship, developed in Python as part of the Data Science Bootcamp at The Bridge.
 
 The goal is to simulate a full turn-based game environment, applying structured programming principles, modular design, and Agile methodology.
 
-🎮 System Description
+### 🎮 System Description
 
 The system simulates a match between a user and an AI with random behavior.
 The flow handles hits, misses, and win conditions while updating boards in real time.
 
-🌍 Internationalization (i18n)
+### 🌍 Internationalization (i18n)
 
 The game allows language selection at the start:
 
 ES Spanish
 EN English
 
-🧠 Logic and Tech Stack
+### 🧠 Logic and Tech Stack
 
 The project is based on key tools from the Data Science ecosystem:
 
@@ -121,7 +122,7 @@ NumPy: management of boards using 2D matrices
 Random: ship placement and random shooting logic
 Methodology: Agile / Scrum with Git & GitHub version control
 
-📐 Project Architecture
+### 📐 Project Architecture
 
 The code follows a modular structure to improve maintainability and scalability:
 
@@ -131,7 +132,7 @@ clases.py	Board abstraction using OOP (classes Board and Ships)
 funciones.py	Game logic (shooting, placement and validations)
 variables.py	Global configuration, dictionaries and coordinates
 
-👥 Development Team
+### 👥 Development Team
 
 This project is based on distributed collaboration with clearly defined roles:
 
@@ -146,7 +147,8 @@ Pablo Hernández — Dev 3 (main.py)
 Game lifecycle and main flow.
 Maksym Chaika — Technical Support
 Code optimization and issue resolution.
-🚀 Installation and execution
+
+### 🚀 Installation and execution
 
 Clone the repository:
 
@@ -160,3 +162,15 @@ pip install -r requirements.txt
 
 Run the game:
 python main.py
+
+
+
+
+
+
+
+
+
+
+**📅 Fecha:** 14 /04/ 2026  
+**📍 Ubicación:** España / Spain 
