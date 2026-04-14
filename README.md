@@ -1,7 +1,7 @@
 
 
 
-#### 🚢 Hundir la Flota | Battleship Game
+### 🚢 Hundir la Flota | Battleship Game
 
 > **Selecciona tu idioma / Select your language:**
 > 
@@ -11,7 +11,7 @@
 
 <a name="español"></a>
 
-## 🇪🇸 Descripción en Español
+# 🇪🇸 Descripción en Español
 
 
 ### 🚢 Team Challenge: Hundir la Flota (Battleship)
@@ -101,7 +101,7 @@ python main.py
 
 <a name="english"></a>
 
-## 🇺🇸 English Version
+# 🇺🇸 English Version
 
 ### 🚢 Team Challenge: Battleship (Hundir la Flota)
 
