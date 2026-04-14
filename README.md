@@ -12,7 +12,7 @@ El objetivo es simular un entorno de juego completo por turnos, aplicando princi
 ---
 
 ## 🎮 Descripción del Sistema
-El sistema reproduce una partida entre un usuario y una IA con comportamiento heurístico. El flujo gestiona impactos, fallos y condiciones de victoria actualizando matrices en tiempo real.
+El sistema reproduce una partida entre un usuario y una IA con comportamiento aleatoria. El flujo gestiona impactos, fallos y condiciones de victoria actualizando matrices en tiempo real.
 
 ### 🌍 Internacionalización (i18n)
 El juego permite seleccionar el idioma al inicio:
