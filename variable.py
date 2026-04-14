@@ -30,7 +30,7 @@ MISS = "O"
 #Mensajes 
 WELCOME_MSG = "Bienvenido a Hundir la Flota"
 INSTRUCTIONS_GAME = "¡Coloca tus barcos en el tablero y dispara coordenadas para intentar hundir los barcos del rival! Gana quien consiga destruir toda la flota enemiga antes"
-INSTRUCTION_ROW = "Introduce un número de fila para disparar (1-10):"
+INSTRUCTION_ROW = "Introduce un número de row para disparar (1-10):"
 INSTRUCTION_COLUMN = "Introduce una letra de columna para disparar (A-J):"
 HIT_MSG = "Tocado"
 MISS_MSG =  "Agua"
@@ -41,7 +41,7 @@ PLAYER_NAME_MSG = "Introduce tu nombre: "
 SUCCES_MSG = "Los barcos han sido colocados"
 
 #-------------------------------------------
-# Filas enumeradas desde el 1 hasta el 101
+# rows enumeradas desde el 1 hasta el 101
 ROWS = {i: i for i in range(1, BOARD_SIZE+1)}
 
 #-------------------------------------------
@@ -66,7 +66,7 @@ COLUMNS = {
 dict_ES = {
     "WELCOME_MSG": "Bienvenido a Hundir la Flota",  
     "INSTRUCTIONS_GAME": "¡Coloca tus barcos en el tablero y dispara coordenadas para intentar hundir los barcos del rival! Gana quien consiga destruir toda la flota enemiga antes",   
-    "INSTRUCTION_ROW": "Introduce un número de fila para disparar (1-10):",
+    "INSTRUCTION_ROW": "Introduce un número de row para disparar (1-10):",
     "INSTRUCTION_COLUMNS": "Introduce una letra de columna para disparar (A-J):",
     "HIT_MSG": "Tocado",
     "MISS_MSG": "Agua",
@@ -78,10 +78,10 @@ dict_ES = {
     "XY_ERROR": "Coordenadas no válidas",
     "XY_LENGTH_ERORR": "Coordenadas fuera del tablero",
     "ROW_ERROR": "Debes introducir un número",
-    "ROW_LENGTH_ERROR": "Fila fuera de rango",
+    "ROW_LENGTH_ERROR": "row fuera de rango",
     "COLUMN_ERROR": "Columna inválida",
     "REPEAT_SHOT": "Ya has disparado ahí",
-    "CPU_SHOT": "La CPU dispara a fila {fila}, columna {col}",
+    "CPU_SHOT": "La CPU dispara a row {row}, columna {col}",
     "PLAYER_BOARD_NAME": "\nTu tablero ({player_name}):",
     "PLAYER_TURN": "\n--- Turno de {player_name}  ---",
     "CPU_BOARD_NAME": "\nTablero de seguimiento:",
@@ -107,7 +107,7 @@ dict_EN = {
     "ROW_LENGTH_ERROR": "Row out of range",
     "COLUMN_ERROR": "Invalid column",
     "REPEAT_SHOT": "You've already fired there",
-    "CPU_SHOT": "CPU fires at row {fila}, column {col}",
+    "CPU_SHOT": "CPU fires at row {row}, column {col}",
     "PLAYER_BOARD_NAME": "\n--- Your board ({player_name}): ---",
     "PLAYER_TURN": "\n--- {player_name}'s turn ---",
     "CPU_BOARD_NAME": "\n--- Your tracking board: ---",
