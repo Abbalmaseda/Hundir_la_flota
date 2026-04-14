@@ -92,7 +92,7 @@ python main.py
 
 
 <p align="center">
-  <img src="image-2.png" width="300" alt="Battleship Team Challenge Logo">
+  <img src="logo.jpg" width="400" alt="Logo The Bridge">
 </p>
 
 
@@ -192,5 +192,5 @@ python main.py
 
 
 <p align="center">
-  <img src="image-2.png" width="300" alt="Battleship Team Challenge Logo">
+  <img src="logo.jpg" width="400" alt="Logo The Bridge">
 </p>
