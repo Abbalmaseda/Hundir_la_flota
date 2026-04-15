@@ -80,18 +80,28 @@ El éxito de este proyecto se basa en la colaboración distribuida y roles defin
     * Optimización de código y resolución de incidencias.
 
 
+
 ## 🚀 Instalación y ejecución
+
 Clona el repositorio:
+```bash
 git clone https://github.com/tu-usuario/Hundir_la_flota.git
+```
 
 Entra en el directorio:
+```bash
 cd Hundir_la_flota
+```
 
-Instala dependencias (si aplica):
+Instala las dependencias (si aplica):
+```bash
 pip install -r requirements.txt
+```
 
 Ejecuta el juego:
+```bash
 python main.py
+```
 
 
 
@@ -138,8 +148,8 @@ The flow handles hits, misses, and win conditions while updating boards in real 
 
 The game allows language selection at the start:
 
-ES Spanish
-EN English
+* ES **Español**
+* 🇺🇸 **English**
 
 
 ## 🧠 Logic and Tech Stack
