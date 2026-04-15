@@ -20,8 +20,10 @@ Este proyecto implementa una versión digital del clásico juego **Hundir la Flo
 El objetivo es simular un entorno de juego completo por turnos, aplicando principios de programación estructurada, diseño modular y metodología Agile.
 
 
+
 ## 🎮 Descripción del Sistema
 El sistema reproduce una partida entre un usuario y una IA con comportamiento aleatoria. El flujo gestiona impactos, fallos y condiciones de victoria actualizando matrices en tiempo real.
+
 
 
 ## 🌍 Internacionalización 
@@ -37,6 +39,7 @@ El proyecto se apoya en herramientas fundamentales del ecosistema de Data Scienc
 * **Librerías:** * `NumPy`: Gestión de tableros mediante matrices bidimensionales.
     * `Random`: Lógica de posicionamiento y disparos aleatorios.
 * **Metodología:** Agile / Scrum con control de versiones en Git & GitHub.
+
 
 
 ## 📐 Arquitectura del Proyecto
@@ -134,11 +137,13 @@ The goal is to simulate a full turn-based game environment, applying structured 
 
 
 ## 🎮 System Description
+
 The system simulates a match between a user and an AI with random behavior.
 The flow handles hits, misses, and win conditions while updating boards in real time.
 
 
 ## 🌍 Internationalization 
+
 The game allows language selection at the start:
 
 * ES **Spanish**
@@ -155,9 +160,9 @@ The project is built on fundamental tools from the Data Science ecosystem:
 * **Methodology:** Agile / Scrum with version control using Git & GitHub.  
 
 
+
 ## 📐 Project Architecture
 The code follows a modular structure to facilitate maintenance and scalability:
-
 
 | File | Responsibility |
 | :--- | :--- |
@@ -165,6 +170,8 @@ The code follows a modular structure to facilitate maintenance and scalability:
 | `clases.py` | Board abstraction using OOP (Classes `Board` and `Ships`). |
 | `funciones.py` | Game logic (shooting, placement, and validations). |
 | `variables.py` | Global configuration, dictionaries, and coordinates. |
+
+
 
 
 ## 🎯 Board Symbol Legend
@@ -176,6 +183,7 @@ The board uses the following symbols to visually represent the game state:
 | `S` | Ship position |
 | `X` | Successful hit |
 | `O` | Missed shot |
+
 
 
 ## 👥 Development Team
@@ -195,6 +203,7 @@ The success of this project is based on distributed collaboration and clearly de
 
 * **Maksym Chaika** — *Technical Support*  
     * Code optimization and issue resolution.  
+
 
 
 ## 🚀 Installation and Execution
