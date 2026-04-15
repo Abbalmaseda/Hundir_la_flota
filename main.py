@@ -63,16 +63,9 @@ def main():
         print(f"{variable.language["CPU_BOARD_NAME"]}")
         player_board.display(player_board.tracking)
 
-        # el tablero solo para debug,
-
-        # print("\nTablero guía para debug:\n")
-
-        #player_board.display(cpu_board.my_board)
-
-        # Fin del debug
-        
-        print(f"{variable.language["PLAYER_TURN"].format(player_name=player_name)}")
-        player_shoot(cpu_board, player_board.tracking)
+        # --- Turno del jugador ---
+        print(f"\n--- {player_name}'s turn ---")
+        disparo_jugador(cpu_board, player_board.tracking)
 
         
         if all_ships_sunk(cpu_board):
