@@ -49,8 +49,19 @@ El código sigue una estructura modular para facilitar el mantenimiento y la esc
 | :--- | :--- |
 | `main.py` | Orquestación del flujo y bucle principal del juego. |
 | `clases.py` | Abstracción del tablero mediante POO (Clases `Board` y `Ships`). |
-| `funciones.py` | Lógica de negocio (disparos, colocación y validaciones). |
+| `funciones.py` | Lógica del juego (disparos, colocación y validaciones). |
 | `variables.py` | Configuración global, diccionarios y coordenadas. |
+
+
+## 🎯 Simbología del Tablero
+El tablero utiliza los siguientes símbolos para representar visualmente el estado de la partida:
+
+| Símbolo | Significado |
+| :--- | :--- |
+| `~` | Agua / Casilla vacía |
+| `S` | Posición de barco |
+| `X` | Impacto acertado |
+| `O` | Disparo fallido |
 
 
 ## 👥 Equipo de Desarrollo
@@ -132,64 +143,87 @@ EN English
 
 
 ## 🧠 Logic and Tech Stack
+The project is built on fundamental tools from the Data Science ecosystem:
 
-The project is based on key tools from the Data Science ecosystem:
+* **Language:** Python 3.x
+* **Libraries:**  
+    * `NumPy`: Board management using two-dimensional arrays.  
+    * `Random`: Logic for random ship placement and shooting.  
+* **Methodology:** Agile / Scrum with version control using Git & GitHub.  
 
-Language: Python 3.x
-Libraries:
-NumPy: management of boards using 2D matrices
-Random: ship placement and random shooting logic
-Methodology: Agile / Scrum with Git & GitHub version control
 
 
 ## 📐 Project Architecture
+The code follows a modular structure to facilitate maintenance and scalability:
 
-The code follows a modular structure to improve maintainability and scalability:
+| File | Responsibility |
+| :--- | :--- |
+| `main.py` | Orchestration of the flow and main game loop. |
+| `clases.py` | Board abstraction using OOP (Classes `Board` and `Ships`). |
+| `funciones.py` | Game logic (shooting, placement, and validations). |
+| `variables.py` | Global configuration, dictionaries, and coordinates. |
 
-File	Responsibility
-main.py	Game flow orchestration and main loop
-clases.py	Board abstraction using OOP (classes Board and Ships)
-funciones.py	Game logic (shooting, placement and validations)
-variables.py	Global configuration, dictionaries and coordinates
+
+
+
+## 🎯 Board Symbol Legend
+The board uses the following symbols to visually represent the game state:
+
+| Symbol | Meaning |
+| :--- | :--- |
+| `~` | Water / Empty cell |
+| `S` | Ship position |
+| `X` | Successful hit |
+| `O` | Missed shot |
+
 
 
 ## 👥 Development Team
+The success of this project is based on distributed collaboration and clearly defined roles:
 
-This project is based on distributed collaboration with clearly defined roles:
+* **Ana Belén Balmaseda** — *Scrum Master* (`variables.py`)  
+    * Team coordination, backlog management, and definition of parameters, symbols, and texts to ensure organized, scalable, and bilingual code.  
 
-Ana Belén Balmaseda — Scrum Master
-(variables.py)
-Team coordination, backlog management and global configuration.
-Dani García — Dev 1 (clases.py)
-Object layer design and board state management.
-Inés Goetsch — Dev 2 (funciones.py)
-Game mechanics and logic validation.
-Pablo Hernández — Dev 3 (main.py)
-Game lifecycle and main flow.
-Maksym Chaika — Technical Support
-Code optimization and issue resolution.
+* **Dani García** — *Dev 1* (`clases.py`)  
+    * Design of the object layer and board state.  
+
+* **Inés Goetsch** — *Dev 2* (`funciones.py`)  
+    * Game mechanics and functional logic validation.  
+
+* **Pablo Hernández** — *Dev 3* (`main.py`)  
+    * Game lifecycle and main flow.  
+
+* **Maksym Chaika** — *Technical Support*  
+    * Code optimization and issue resolution.  
 
 
-## 🚀 Installation and execution
+
+## 🚀 Installation and Execution
 
 Clone the repository:
-
+```bash
 git clone https://github.com/tu-usuario/Hundir_la_flota.git
+```
 
-Go to the project directory:
+Enter the directory:
+```bash
 cd Hundir_la_flota
+```
 
-Install dependencies (if needed):
+Install dependencies (if applicable):
+```bash
 pip install -r requirements.txt
+```
 
 Run the game:
+```bash
 python main.py
+```
 
 
 
-**📅 Date:** April/ 2026  
-**📍 Location:** Spain
-
+**📅 Date:** April 2026  
+**📍 Location:** Spain  
 
 <p align="center">
   <img src="logo.jpg" width="400" alt="Logo The Bridge">
