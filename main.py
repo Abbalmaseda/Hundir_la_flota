@@ -65,7 +65,7 @@ def main():
 
         # --- Turno del jugador ---
         print(f"\n--- {player_name}'s turn ---")
-        disparo_jugador(cpu_board, player_board.tracking)
+        player_shoot(cpu_board, player_board.tracking)
 
         
         if all_ships_sunk(cpu_board):
