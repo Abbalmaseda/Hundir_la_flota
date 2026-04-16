@@ -71,7 +71,7 @@ OUTPUT_MSG = f"Selecciona el idioma del juego: {LANGUAGE_OPTIONS}:"
 # Diccionarios de idiomas
 dict_ES = {
     "WELCOME_MSG": "Bienvenido a Hundir la Flota.",  
-    "INSTRUCTIONS_GAME": "¡Dispara coordenadas para intentar hundir los barcos del rival!\nGana quien consiga destruir toda la flota enemiga antes.\nLos barcos se colocan de manera aleatoria.\nEmpiezas jugando tú",   
+    "INSTRUCTIONS_GAME": "¡Dispara coordenadas para intentar hundir los barcos del rival!\nGana quien consiga destruir toda la flota enemiga antes.\nLos barcos se colocan de manera aleatoria.\nEmpiezas jugando tú.",   
     "INSTRUCTION_ROWS": "Introduce un número de fila para disparar (1-10):",
     "INSTRUCTION_COLUMNS": "Introduce una letra de columna para disparar (A-J):",
     "HIT_MSG": "Tocado.",

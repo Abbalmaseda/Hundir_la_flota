@@ -63,15 +63,7 @@ def main():
         print(f"{variable.language["CPU_BOARD_NAME"]}")
         player_board.display(player_board.tracking)
 
-        # Mostramos el tablero solo para debug, se debe eliminar desde aquí en la versión final
-
-        print("\nTablero guía para debug:\n")
-
-        player_board.display(cpu_board.my_board)
-
-        # Fin del debug, eliminar hasta aquí
-
-        
+        # --- Turno del jugador ---
         print(f"{variable.language["PLAYER_TURN"].format(player_name=player_name)}")
         player_shoot(cpu_board, player_board.tracking)
 
