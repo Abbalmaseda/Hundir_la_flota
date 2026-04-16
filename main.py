@@ -64,7 +64,7 @@ def main():
         player_board.display(player_board.tracking)
 
         # --- Turno del jugador ---
-        print(f"\n--- {player_name}'s turn ---")
+        print(f"{variable.language["PLAYER_TURN"].format(player_name=player_name)}")
         player_shoot(cpu_board, player_board.tracking)
 
         
